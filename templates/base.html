@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+{% block head %}
+    {% include 'components/head.html' %}
+{% endblock %}
+
+  <body>
+    {% include 'components/navbar.html' %}
+    {% include 'components/hero.html' %}
+  {% include 'core/main.html' %}
+  {% include 'components/footer.html' %}
+
+  {% block scripts %}{% include 'components/scripts.html' %}{% endblock %}
+  </body>
