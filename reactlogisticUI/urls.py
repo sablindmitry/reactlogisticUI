@@ -18,13 +18,14 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path
 
-from core.views import index
-from orders.views import  OrderFormView
+from core.views import index, order_ok
+from orders.views import OrderFormView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index, name='index'),
-    path('order/', OrderFormView.as_view(), name='order')
+    path('order/', OrderFormView.as_view(), name='order'),
+    path('order_ok/', order_ok, name='ok')
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

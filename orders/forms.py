@@ -16,7 +16,9 @@ class OrderForm(ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.helper = FormHelper()
-        self.helper.attrs = {'hx-post': '/'}
+        self.helper.form_method = 'post'
+        self.helper.form_action = 'order/'
+        #self.helper.attrs = {'hx-post': 'order_ok/'}
 
         self.helper.layout = Layout(
             Row(

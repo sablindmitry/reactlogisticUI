@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'core',
     'orders',
     'crispy_forms',
-    "django_htmx",
+    'tgmessaging',
 
 ]
 
@@ -147,3 +147,9 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+TG_TOKEN = config('token')
+TG_URL = f'https://api.telegram.org/bot{TG_TOKEN}/'
+TG_METHOD = 'sendMessage'
+TG_CHAT_ID = config('chat_id_al')
